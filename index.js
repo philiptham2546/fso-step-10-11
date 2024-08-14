@@ -7,6 +7,10 @@ app.use(cors())
 app.use(express.json())
 app.use(morgan('tiny'))
 
+//MUST use the built-in middleware from Express called static to make Express show static content
+//static content == things like index.html and java script that is fetched
+app.use(express.static('dist'))
+
 //PERSONS MUST BE LET NOT CONST
 let persons = [
     { 
